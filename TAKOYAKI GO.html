@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAKOYAKI GO - Business Model Canvas Presentation</title>
+  <style>
+    :root {
+      --bg: #F8F9FA;
+      --card-bg: #FFFFFF;
+      --primary: #D9381E;
+      --primary-light: #FFECE8;
+      --accent: #E65100;
+      --dark: #263238;
+      --text-muted: #546E7A;
+      --green: #2E7D32;
+      --green-light: #E8F5E9;
+      --border: #CFD8DC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: #1E293B; color: var(--dark); padding: 20px; display: flex; flex-direction: column; align-items: center; }
+    
+    .tabs { margin-bottom: 20px; display: flex; gap: 10px; }
+    .tab-btn { padding: 10px 20px; border-radius: 6px; border: none; background: #334155; color: white; cursor: pointer; font-weight: 600; font-size: 14px; }
+    .tab-btn.active { background: var(--primary); }
+    
+    .slide-wrapper { width: 1200px; height: 675px; background: var(--bg); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); padding: 28px 36px; display: none; flex-direction: column; justify-content: space-between; position: relative; }
+    .slide-wrapper.active { display: flex; }
+    
+    .header { border-bottom: 2px solid #ECEFF1; padding-bottom: 10px; }
+    .tag { font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+    .title { font-size: 20px; font-weight: 800; color: var(--dark); }
+    .subtitle { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Layout Phương án 1 */
+    .canvas-grid { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: 290px 145px; gap: 10px; margin-top: 12px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 11px; display: flex; flex-direction: column; overflow: hidden; }
+    .card-title { font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; border-bottom: 1px solid #ECEFF1; padding-bottom: 4px; }
+    .card-vp { background: var(--primary-light); border: 2px solid var(--primary); }
+    .card-vp .card-title { color: var(--primary); border-bottom-color: #FFCCBC; }
+    .cost-card { grid-column: span 2; border-left: 4px solid #C62828; }
+    .rev-card { grid-column: span 3; border-left: 4px solid var(--green); }
+    
+    ul { list-style: none; padding-left: 0; }
+    li { margin-bottom: 5px; line-height: 1.35; color: #37474F; }
+    li strong { color: var(--dark); }
+
+    .data-badge { display: inline-block; background: var(--green-light); color: var(--green); font-weight: 700; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+
+    .flywheel-bar { background: var(--dark); color: #ECEFF1; padding: 8px 16px; border-radius: 6px; font-size: 11px; font-weight: 600; text-align: center; margin-top: 8px; }
+    .flywheel-bar span { color: #FF8A65; }
+
+    /* Layout Phương án 2 */
+    .p2-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; height: 490px; margin-top: 15px; }
+    .p2-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; gap: 10px; }
+    .p2-card h3 { font-size: 13px; font-weight: 800; color: var(--primary); border-bottom: 2px solid var(--primary-light); padding-bottom: 6px; }
+
+    .p2-back-grid { display: grid; grid-template-rows: 240px 240px; gap: 14px; margin-top: 15px; }
+    .p2-back-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchSlide(0)">Phương án 1: Canvas Toàn diện</button>
+    <button class="tab-btn" onclick="switchSlide(1)">Phương án 2A: Front-Stage Canvas</button>
+    <button class="tab-btn" onclick="switchSlide(2)">Phương án 2B: Back-Stage Canvas</button>
+  </div>
+
+  <!-- SLIDE 1: MASTER CANVAS -->
+  <div class="slide-wrapper active" id="slide-0">
+    <div class="header">
+      <div class="tag">04 / BUSINESS MODEL CANVAS</div>
+      <div class="title">TAKOYAKI GO BMC: Đa Kênh Tinh Gọn – Vận Hành Chuẩn Hóa – Bền Vững Tài Chính</div>
+      <div class="subtitle">Bản đồ 9 khối tích hợp dữ liệu tài chính Năm 1 – Điểm hòa vốn an toàn ở mức 49 đơn/ngày</div>
+    </div>
+
+    <div class="canvas-grid">
+      <div class="card">
+        <div class="card-title">8. ĐỐI TÁC CHÍNH</div>
+        <ul>
+          <li><strong>Nguyên liệu sạch:</strong> Bạch tuộc (200k/kg), bột Takoyaki, cá bào.</li>
+          <li><strong>Bao bì:</strong> Hộp kraft nắp gập 750ml thoát khí chống ỉu bánh.</li>
+          <li><strong>App công nghệ:</strong> GrabFood, ShopeeFood (phí ~25%).</li>
+          <li><strong>Mặt bằng:</strong> Vỉa hè/ki-ốt gần cổng trường ĐH.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">7. HOẠT ĐỘNG CHÍNH</div>
+        <ul>
+          <li><strong>Chế biến SOP:</strong> Nướng mẻ nhỏ 3–5 phút; định lượng từng gram.</li>
+          <li><strong>Điều phối đơn:</strong> Xử lý song song đơn tại chỗ và shipper.</li>
+          <li><strong>Kiểm soát lỗi:</strong> Kiểm kê tồn kho, rà soát hao hụt cuối ca.</li>
+        </ul>
+        <div class="card-title" style="margin-top: 10px;">6. NGUỒN LỰC CHÍNH</div>
+        <ul>
+          <li><strong>Thiết bị:</strong> Xe Inox (8tr), 2 máy nướng điện, POS cầm tay.</li>
+          <li><strong>Tài sản IP:</strong> Công thức bột, SOP 3 cấp, checklist mở ca.</li>
+        </ul>
+      </div>
+
+      <div class="card card-vp">
+        <div class="card-title">2. ĐỀ XUẤT GIÁ TRỊ</div>
+        <ul>
+          <li>🔥 <strong>NÓNG TRỌN VẸN:</strong> Chế biến cuốn chiếu; bao bì kraft giữ nhiệt giòn vỏ.</li>
+          <li>⚡ <strong>NHANH CHÓNG:</strong> Ra món 3–5 phút; không phải chờ đợi lâu.</li>
+          <li>🛵 <strong>TIỆN LỢI ĐA KÊNH:</strong> Xe đẩy gần trường kết hợp app đặt tận nơi.</li>
+          <li>🎯 <strong>ĐỒNG NHẤT:</strong> Định lượng chuẩn, vị ngon ổn định ở mọi ca.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">4. QUAN HỆ KHÁCH HÀNG</div>
+        <ul>
+          <li><strong>Trước mua:</strong> Menu QR minh bạch, hình ảnh combo rõ ràng.</li>
+          <li><strong>Trong mua:</strong> Bếp mở sạch sẽ, thao tác vệ sinh trực quan.</li>
+          <li><strong>Sau mua:</strong> Quét QR tích điểm, xử lý khiếu nại trong 15 phút.</li>
+        </ul>
+        <div class="card-title" style="margin-top: 10px;">3. KÊNH PHÂN PHỐI</div>
+        <ul>
+          <li><strong>Kênh Offline (65%):</strong> Xe đẩy cổng trường ĐH/KTX.</li>
+          <li><strong>Kênh Online (35%):</strong> App giao hàng (bán kính < 5km).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">1. PHÂN KHÚC KHÁCH HÀNG</div>
+        <ul>
+          <li><strong>Sinh viên (50%):</strong> Ăn vặt, tụ tập bạn bè, giá vừa phải &rarr; Phần 6 viên (28k).</li>
+          <li><strong>Dân văn phòng (30%):</strong> Ăn xế nhanh gọn, giao tận nơi &rarr; Phần 8 viên (38k).</li>
+          <li><strong>Gia đình/Nhóm (20%):</strong> Cuối tuần sum họp, nhiều sốt &rarr; Combo 12 viên (52k).</li>
+        </ul>
+      </div>
+
+      <div class="card cost-card">
+        <div class="card-title">9. CẤU TRÚC CHI PHÍ</div>
+        <ul>
+          <li><strong>Biến phí: 15.000đ/đơn</strong> (39,5% DT): Bạch tuộc 5k, Bột 2,5k, Hộp kraft 2,5k, Topping/Sốt 3k, Hao hụt 2k.</li>
+          <li><strong>Chi phí App:</strong> Trung bình 3.325đ/đơn (25% hoa hồng trên 35% đơn online).</li>
+          <li><strong>Định phí: 25.000.000đ/tháng</strong> (Mặt bằng 5,5tr, Lương 2 người 12tr, Điện/MKT 7,5tr).</li>
+        </ul>
+      </div>
+
+      <div class="card rev-card">
+        <div class="card-title">5. DÒNG DOANH THU & CHỈ SỐ AN TOÀN</div>
+        <ul>
+          <li><strong>Doanh thu Năm 1: 711,36 triệu đồng</strong> (60 đơn/ngày &times; 26 ngày/tháng &times; AOV 38.000đ).</li>
+          <li><strong>Cơ cấu:</strong> Trực tiếp chiếm 65% (462,4tr) | Trực tuyến chiếm 35% (249,0tr).</li>
+          <li><strong>HÒA VỐN: 49 đơn/ngày</strong> (1.271 đơn/tháng) &rarr; <span class="data-badge">Biên an toàn +22,7%</span> (Khoảng đệm 11 đơn/ngày).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flywheel-bar">
+      LOGIC VẬN HÀNH: Nhu cầu ăn vặt sinh viên &rarr; <span>Giá trị Nóng-Nhanh-Tiện</span> &rarr; Phân phối Đa kênh &rarr; Biến phí 15k &rarr; <span>Hòa vốn 49 đơn/ngày</span> &rarr; Chuẩn hóa SOP &rarr; Nhân rộng chuỗi.
+    </div>
+  </div>
+
+  <!-- SLIDE 2A: FRONT-STAGE -->
+  <div class="slide-wrapper" id="slide-1">
+    <div class="header">
+      <div class="tag">BMC / FRONT-STAGE CANVAS</div>
+      <div class="title">Chinh Phục Khách Hàng Trẻ Bằng Bộ Ba Giá Trị "Nóng – Nhanh – Tiện Lợi"</div>
+      <div class="subtitle">Front-Stage: Tối ưu điểm chạm từ quầy xe đẩy đến ứng dụng giao đồ ăn</div>
+    </div>
+
+    <div class="p2-grid">
+      <div class="p2-card">
+        <h3>1. KHÁCH HÀNG MỤC TIÊU</h3>
+        <ul>
+          <li><strong>Sinh viên (50%):</strong> Ăn vặt giờ giải lao, tụ tập bạn bè với ngân sách vừa phải &rarr; Phần 6 viên (28.000đ).</li>
+          <li><strong>Nhân viên trẻ (30%):</strong> Ăn nhẹ xế chiều (14h - 16h), cần sạch sẽ, giao tận nơi &rarr; Phần 8 viên (38.000đ).</li>
+          <li><strong>Nhóm bạn/Gia đình (20%):</strong> Nhu cầu chia sẻ, thích nhiều lựa chọn sốt &rarr; Combo 12 viên (52.000đ).</li>
+        </ul>
+      </div>
+
+      <div class="p2-card" style="border: 2px solid var(--primary); background: var(--primary-light);">
+        <h3 style="color: var(--primary);">2. ĐỀ XUẤT GIÁ TRỊ</h3>
+        <ul>
+          <li>🔥 <strong>NÓNG TRỌN VẸN:</strong> Bánh nướng mẻ nhỏ cuốn chiếu; bao bì kraft nắp gập giữ nhiệt, có lỗ thoát khí chống mềm vỏ.</li>
+          <li>⚡ <strong>NHANH CHÓNG:</strong> SOP tinh gọn, hoàn thiện đơn từ 3 - 5 phút; không phải chờ đợi.</li>
+          <li>🛵 <strong>TIỆN LỢI ĐA KÊNH:</strong> Xe đẩy gần trường học kết hợp đặt món trên Grab/ShopeeFood; quét mã QR một chạm.</li>
+        </ul>
+      </div>
+
+      <div class="p2-card">
+        <h3>3. KÊNH & QUAN HỆ KH</h3>
+        <ul>
+          <li><strong>Kênh Offline (65% DT):</strong> Xe Inox nhận diện nổi bật, bếp mở chứng minh vệ sinh ATTP.</li>
+          <li><strong>Kênh Online (35% DT):</strong> Nền tảng gọi món, giới hạn bán kính &lt; 5km để bảo đảm độ nóng.</li>
+          <li><strong>Quan hệ khách hàng:</strong> Tích điểm đổi quà qua QR, cam kết xử lý khiếu nại trong 15 phút.</li>
+        </ul>
+      </div>
+
+      <div class="p2-card" style="border-left: 4px solid var(--green);">
+        <h3 style="color: var(--green);">4. DÒNG TIỀN DOANH THU</h3>
+        <ul>
+          <li><strong>Doanh thu Năm 1:</strong> 711,36 triệu đồng (Trung bình 59,28 triệu/tháng).</li>
+          <li><strong>Sản lượng mục tiêu:</strong> 60 đơn/ngày (1.560 đơn/tháng).</li>
+          <li><strong>Cơ cấu sản phẩm:</strong>
+            <br>&bull; Phần 6v (28k): 30%
+            <br>&bull; Phần 8v (38k): 50% (Chủ lực)
+            <br>&bull; Phần 12v (52k): 20%
+          </li>
+          <li><strong>Giá trị đơn (AOV):</strong> 38.000đ/đơn.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2B: BACK-STAGE -->
+  <div class="slide-wrapper" id="slide-2">
+    <div class="header">
+      <div class="tag">BMC / BACK-STAGE CANVAS</div>
+      <div class="title">Quy Trình SOP 3 Cấp Và Cấu Trúc Biến Phí 15.000đ Tạo Nền Tảng Hòa Vốn Vững Chắc</div>
+      <div class="subtitle">Back-Stage: Quản trị chuỗi cung ứng, hạn chế hao hụt và bảo toàn dòng tiền</div>
+    </div>
+
+    <div class="p2-back-grid">
+      <div class="p2-back-row">
+        <div class="p2-card">
+          <h3>8. ĐỐI TÁC CHIẾN LƯỢC</h3>
+          <ul>
+            <li><strong>Bạch tuộc & Bột:</strong> Hợp đồng sỉ bạch tuộc sạch (200k/kg), bột Takoyaki pha sẵn ổn định.</li>
+            <li><strong>Bao bì:</strong> Đặt in hộp kraft nắp gập 750ml (2.600đ/cái) số lượng lớn.</li>
+            <li><strong>Nền tảng App:</strong> GrabFood, ShopeeFood với mức chiết khấu trung bình dự toán 25%.</li>
+          </ul>
+        </div>
+        <div class="p2-card">
+          <h3>7. HOẠT ĐỘNG CHÍNH</h3>
+          <ul>
+            <li><strong>SOP 3 cấp độ:</strong> (1) Kiểm định nguyên liệu &rarr; (2) Định lượng nướng bánh &rarr; (3) Kiểm tra trước đóng hộp.</li>
+            <li><strong>Vận hành 2 luồng:</strong> Tách khu vực đơn tại quầy và đơn shipper tránh nghẽn giờ cao điểm.</li>
+            <li><strong>Kiểm soát hao hụt:</strong> Đối soát nguyên liệu thực tế với doanh thu cuối ngày.</li>
+          </ul>
+        </div>
+        <div class="p2-card">
+          <h3>6. NGUỒN LỰC CHÍNH</h3>
+          <ul>
+            <li><strong>Vốn đầu tư ban đầu:</strong> 100 triệu đồng (7 thành viên sáng lập đóng góp).</li>
+            <li><strong>Cơ sở vật chất:</strong> Xe đẩy Inox (8tr), 2 bếp điện (2tr), tủ mát (4,5tr), POS bill.</li>
+            <li><strong>Tài sản vô hình:</strong> Công thức chuẩn, checklist mở/đóng ca, bộ tài liệu SOP.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p2-back-row" style="grid-template-columns: 1fr 1fr;">
+        <div class="p2-card" style="border-left: 4px solid #C62828;">
+          <h3 style="color: #C62828;">9. CẤU TRÚC CHI PHÍ CHI TIẾT</h3>
+          <ul>
+            <li><strong>Biến phí sản phẩm: 15.000đ/đơn (39,5% DT):</strong> Bạch tuộc (5k), Bột (2,5k), Hộp kraft (2,5k), Sốt/topping (3k), Hao hụt/vật tư (2k).</li>
+            <li><strong>Phí App Online:</strong> Bình quân 3.325đ/đơn (25% hoa hồng trên 35% tỷ trọng online).</li>
+            <li><strong>Định phí hàng tháng: ~25.000.000đ/tháng:</strong> Mặt bằng (5,5tr), Nhân công 2 người (12tr), Điện nước gas (1,5tr), MKT duy trì (2,5tr), Khấu hao/quản lý (3,5tr).</li>
+          </ul>
+        </div>
+
+        <div class="p2-card" style="border-left: 4px solid var(--green);">
+          <h3 style="color: var(--green);">CHỈ SỐ AN TOÀN TÀI CHÍNH NĂM 1</h3>
+          <ul>
+            <li><strong>Sản lượng hòa vốn: 49 đơn/ngày</strong> (1.271 đơn/tháng) | DT hòa vốn: 48,29 triệu/tháng.</li>
+            <li><strong>Sản lượng kế hoạch: 60 đơn/ngày</strong> &rarr; <span class="data-badge">Biên độ an toàn: +22,7%</span> (Khoảng đệm 11 đơn/ngày).</li>
+            <li><strong>Hiệu quả tài chính Năm 1:</strong> Lợi nhuận ròng 68,28 triệu đồng; Dòng tiền thuần 75,62 triệu đồng.</li>
+            <li><strong>Quỹ dự phòng tiền mặt:</strong> Duy trì 59,5 triệu đồng ban đầu để bảo toàn thanh khoản.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchSlide(index) {
+      document.querySelectorAll('.slide-wrapper').forEach((el, i) => {
+        el.classList.toggle('active', i === index);
+      });
+      document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
