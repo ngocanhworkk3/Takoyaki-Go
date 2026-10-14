@@ -4,60 +4,243 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TAKOYAKI GO - Business Model Canvas Presentation</title>
-  <style>
-    :root {
-      --bg: #F8F9FA;
-      --card-bg: #FFFFFF;
-      --primary: #D9381E;
-      --primary-light: #FFECE8;
-      --accent: #E65100;
-      --dark: #263238;
-      --text-muted: #546E7A;
-      --green: #2E7D32;
-      --green-light: #E8F5E9;
-      --border: #CFD8DC;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    body { background: #1E293B; color: var(--dark); padding: 20px; display: flex; flex-direction: column; align-items: center; }
-    
-    .tabs { margin-bottom: 20px; display: flex; gap: 10px; }
-    .tab-btn { padding: 10px 20px; border-radius: 6px; border: none; background: #334155; color: white; cursor: pointer; font-weight: 600; font-size: 14px; }
-    .tab-btn.active { background: var(--primary); }
-    
-    .slide-wrapper { width: 1200px; height: 675px; background: var(--bg); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); padding: 28px 36px; display: none; flex-direction: column; justify-content: space-between; position: relative; }
-    .slide-wrapper.active { display: flex; }
-    
-    .header { border-bottom: 2px solid #ECEFF1; padding-bottom: 10px; }
-    .tag { font-size: 11px; font-weight: 700; color: var(--primary); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
-    .title { font-size: 20px; font-weight: 800; color: var(--dark); }
-    .subtitle { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+ <style>
+:root{
+  --bg:#F1F5F9;
+  --card-bg:#FFFFFF;
+  --primary:#D9381E;
+  --primary-light:#FFECE8;
+  --dark:#263238;
+  --text-muted:#546E7A;
+  --green:#2E7D32;
+  --green-light:#E8F5E9;
+  --border:#CFD8DC;
+}
 
-    /* Layout Phương án 1 */
-    .canvas-grid { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: 290px 145px; gap: 10px; margin-top: 12px; }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 11px; display: flex; flex-direction: column; overflow: hidden; }
-    .card-title { font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; border-bottom: 1px solid #ECEFF1; padding-bottom: 4px; }
-    .card-vp { background: var(--primary-light); border: 2px solid var(--primary); }
-    .card-vp .card-title { color: var(--primary); border-bottom-color: #FFCCBC; }
-    .cost-card { grid-column: span 2; border-left: 4px solid #C62828; }
-    .rev-card { grid-column: span 3; border-left: 4px solid var(--green); }
-    
-    ul { list-style: none; padding-left: 0; }
-    li { margin-bottom: 5px; line-height: 1.35; color: #37474F; }
-    li strong { color: var(--dark); }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
 
-    .data-badge { display: inline-block; background: var(--green-light); color: var(--green); font-weight: 700; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+body{
+  background:#1E293B;
+  color:var(--dark);
+  padding:15px;
+}
 
-    .flywheel-bar { background: var(--dark); color: #ECEFF1; padding: 8px 16px; border-radius: 6px; font-size: 11px; font-weight: 600; text-align: center; margin-top: 8px; }
-    .flywheel-bar span { color: #FF8A65; }
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:20px;
+}
 
-    /* Layout Phương án 2 */
-    .p2-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; height: 490px; margin-top: 15px; }
-    .p2-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 16px; font-size: 12px; display: flex; flex-direction: column; gap: 10px; }
-    .p2-card h3 { font-size: 13px; font-weight: 800; color: var(--primary); border-bottom: 2px solid var(--primary-light); padding-bottom: 6px; }
+.tab-btn{
+  padding:12px 18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#334155;
+  color:white;
+  font-weight:600;
+  transition:0.3s;
+}
 
-    .p2-back-grid { display: grid; grid-template-rows: 240px 240px; gap: 14px; margin-top: 15px; }
-    .p2-back-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  </style>
+.tab-btn.active{
+  background:var(--primary);
+}
+
+.slide-wrapper{
+  display:none;
+  width:100%;
+  max-width:1400px;
+  margin:auto;
+  background:var(--bg);
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.slide-wrapper.active{
+  display:block;
+}
+
+.header{
+  border-bottom:2px solid #ECEFF1;
+  padding-bottom:12px;
+  margin-bottom:18px;
+}
+
+.tag{
+  font-size:12px;
+  font-weight:700;
+  color:var(--primary);
+  letter-spacing:1px;
+}
+
+.title{
+  font-size:28px;
+  font-weight:800;
+  margin-top:6px;
+  line-height:1.3;
+}
+
+.subtitle{
+  margin-top:6px;
+  color:var(--text-muted);
+  line-height:1.5;
+}
+
+.canvas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+}
+
+.card-title{
+  font-size:13px;
+  font-weight:800;
+  color:var(--text-muted);
+  margin-bottom:10px;
+  padding-bottom:6px;
+  border-bottom:1px solid #ECEFF1;
+}
+
+.card-vp{
+  background:var(--primary-light);
+  border:2px solid var(--primary);
+}
+
+.card-vp .card-title{
+  color:var(--primary);
+}
+
+.cost-card{
+  border-left:5px solid #C62828;
+}
+
+.rev-card{
+  border-left:5px solid var(--green);
+}
+
+ul{
+  padding-left:18px;
+}
+
+li{
+  margin-bottom:8px;
+  color:#37474F;
+  line-height:1.6;
+}
+
+.data-badge{
+  display:inline-block;
+  background:var(--green-light);
+  color:var(--green);
+  padding:3px 8px;
+  border-radius:6px;
+  font-weight:700;
+}
+
+.flywheel-bar{
+  margin-top:20px;
+  background:var(--dark);
+  color:white;
+  padding:16px;
+  border-radius:10px;
+  line-height:1.6;
+}
+
+.flywheel-bar span{
+  color:#FF8A65;
+}
+
+.p2-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+
+.p2-card{
+  background:white;
+  border-radius:12px;
+  border:1px solid var(--border);
+  padding:16px;
+}
+
+.p2-card h3{
+  margin-bottom:10px;
+  color:var(--primary);
+  border-bottom:2px solid var(--primary-light);
+  padding-bottom:8px;
+}
+
+.p2-back-grid{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.p2-back-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+}
+
+@media (max-width:768px){
+
+  body{
+    padding:10px;
+  }
+
+  .tabs{
+    flex-direction:column;
+  }
+
+  .tab-btn{
+    width:100%;
+  }
+
+  .slide-wrapper{
+    padding:15px;
+  }
+
+  .title{
+    font-size:22px;
+  }
+
+  .subtitle{
+    font-size:14px;
+  }
+
+  li{
+    font-size:14px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .title{
+    font-size:18px;
+  }
+
+  .card,
+  .p2-card{
+    padding:12px;
+  }
+
+}
+</style>
 </head>
 <body>
 
@@ -245,7 +428,7 @@
         </div>
       </div>
 
-      <div class="p2-back-row" style="grid-template-columns: 1fr 1fr;">
+      <div class="p2-back-row">
         <div class="p2-card" style="border-left: 4px solid #C62828;">
           <h3 style="color: #C62828;">9. CẤU TRÚC CHI PHÍ CHI TIẾT</h3>
           <ul>
